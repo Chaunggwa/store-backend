@@ -4,11 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
     try {
-       const {userId} = auth(); 
-       
-       
        const stores = await prismadb.store.findMany();
-       console.log(stores);
        return NextResponse.json(stores);
 
     } catch (error) {
